@@ -1,0 +1,3 @@
+﻿NJominiMap = {
+	WORLD_EXTENTS_Y = 32
+}

@@ -1,0 +1,13 @@
+{
+  "name" : "Gorgeous Political Map",
+  "id" : "gpm",
+  "version" : "1.0.0",
+  "supported_game_version" : "",
+  "short_description" : "A graphical map mod which implements terrain relief shading and a heightmap based on satellite data.",
+  "thumbnail" : "thumbnail.png",
+  "tags" : [],
+  "relationships" : [],
+  "game_custom_data" : {
+    "multiplayer_synchronized" : false
+  }
+}

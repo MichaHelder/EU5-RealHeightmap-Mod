@@ -1,0 +1,41 @@
+﻿#three zoom ranges: province, state, country
+#try to use these to filter out what information is given to the player at which zoom levels
+@location_zoomstep_min = 4
+@location_mapname_zoomstep_min = 2
+@location_zoomstep_max = 5
+@province_zoomstep_min = 6
+@province_zoomstep_max = 9
+@country_zoomstep_min = 10
+@country_zoomstep_max = 17
+@city_zoomstep_min = 0
+@city_zoomstep_details = 3
+@city_zoomstep_max = 6
+@capital_zoomstep_min = 0
+@capital_zoomstep_max = 100
+@market_zoomstep_min = 0
+@market_zoomstep_max = 100
+@flatmap_zoomstep_min = 12
+@visible_locations_gfx_zoomstep = 13
+@max_int_orgs_in_ui = 14
+@max_gp_subjects_in_ui = 9
+@max_relation_items_in_ui = 7
+@max_rivers_zoomstep = 13
+
+NBorder = {
+	#cull borders when zooming out
+	MAX_ZOOM_STEP_LOCATION = 9 #@province_zoomstep_max
+	MAX_ZOOM_STEP_PROVINCE = 12 #@location_zoomstep_max
+	MAX_ZOOM_STEP_AREA = 22 #@area_zoomstep_max
+	MAX_ZOOM_STEP_COUNTRY = 500
+	MAX_ZOOM_STEP_WAR = 22
+	MAX_ZOOM_STEP_SELECTED = 500 # @location_zoomstep_max
+	MAX_ZOOM_STEP_HIGHLIGHTED = 500 #@province_zoomstep_max
+	MAX_ZOOM_STEP_IMPASSABLE = 8# @province_zoomstep_max
+	MAX_ZOOM_STEP_BLOCKADED = 500 # @province_zoomstep_max
+	MAX_ZOOM_SEA_LANE = 500
+	MAX_ZOOM_STEP_SEA_LANE = 22
+}
+
+NGraphics = {
+	DISABLE_RIVERS_ZOOM_LEVEL = 500
+}
