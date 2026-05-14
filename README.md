@@ -1,4 +1,4 @@
-# gorgeous_political_map
+# Real Heightmap for Europa Universalis V
 
 A graphical map mod which implements terrain relief shading and a heightmap based on satellite data.
 
