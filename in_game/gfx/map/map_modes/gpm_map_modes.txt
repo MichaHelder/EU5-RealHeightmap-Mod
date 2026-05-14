@@ -70,9 +70,6 @@
 @filled_far_before_lighting_blend = 	@filled_near_before_lighting_blend
 @filled_far_after_lighting_blend = 		@filled_near_after_lighting_blend 
 
-
-
-
 # Paper map
 @flatmap_gradient_alpha_inside = 		0.8
 @flatmap_gradient_alpha_outside = 		0.8
@@ -127,13 +124,12 @@ political = {
 	fill_in_impassable = yes
 	quick_action_slot = 1
 	flatmap_behaviour = Always
-	use_highlight = yes
 	enable_snow = yes
 	enable_rivers = yes
 	
 	enable_water_names = yes
 
-	pinned_by_default = yes
+	pinned_by_default = 2
 	category = government
 
 	map_markers = {

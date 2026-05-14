@@ -57,17 +57,15 @@ VertexShader =
 				#else
 					float SizeMult =1+(1-TooSmallForSize);;
 				#endif
-				//TODO-8799 find the cause for the pixel offset and remove this Correction 
-				float2 Correction  = float2(0.5f, 0.5f);
-				float2 InputPositionCorrected =  Input.Position + Correction;
-				float2 InputCenterCorrected =Input.Center + Correction;
+			    
 				//using the max height instead of the correct height will make borders smoother and go over the terrain in most of the cases
-				float InputPositionHeight = GetHeight( InputPositionCorrected );
-				float CenterPositionHeight = GetHeight( InputCenterCorrected );
-				// MaxHeight = max(InputPositionHeight, GetHeight( InputCenterCorrected ));
-				float3 VertexPos3d = float3( InputPositionCorrected.x, InputPositionHeight, InputPositionCorrected.y );                
-				float3 CenterPos3d = float3( InputCenterCorrected.x, CenterPositionHeight, InputCenterCorrected.y );
-				float OriginalHalfWidth = length( Input.Position - Input.Center );
+				SUnpackedBorderInput ProcessedInput = UnpackPdxBorder(Input);
+				float InputPositionHeight = GetHeight( ProcessedInput.Position );
+				float CenterPositionHeight = GetHeight( ProcessedInput.Center );
+				// MaxHeight = max(InputPositionHeight, GetHeight( ProcessedInput.Center ));
+				float3 VertexPos3d = float3( ProcessedInput.Position .x, InputPositionHeight, ProcessedInput.Position .y );                
+				float3 CenterPos3d = float3( ProcessedInput.Center.x, CenterPositionHeight, ProcessedInput.Center.y );
+				float OriginalHalfWidth = length( ProcessedInput.Position - ProcessedInput.Center );
 				
 				#ifdef WIDTH
 					SizeMult *= WIDTH;
@@ -97,7 +95,7 @@ VertexShader =
 				float4 BiasPosition = FixProjectionAndMul( ViewProjectionMatrix, float4( VertexPos3d.x,VertexPos3d.y+HeightDifference,VertexPos3d.z, 1.0 ) );
 				Out.Position.z = BiasPosition.z;
 				Out.WorldSpacePos = VertexPos3d;
-                Out.UV = Input.UV;
+                Out.UV = ProcessedInput.UV;
 				
 				Out.AlphaMultipliyer =TooSmall;
 				Out.SmoothTexture = TooSmallForSize;
