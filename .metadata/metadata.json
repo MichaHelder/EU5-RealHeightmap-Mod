@@ -1,6 +1,6 @@
 {
   "name" : "Real Heightmap",
-  "id" : "gpm",
+  "id" : "heightmapmod",
   "version" : "1.0.0",
   "supported_game_version" : "1.2.*",
   "short_description" : "A graphical map mod which implements terrain relief shading and a heightmap based on satellite data.",
